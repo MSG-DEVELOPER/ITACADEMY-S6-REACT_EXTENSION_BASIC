@@ -16,6 +16,6 @@ export const TitleBox = styled.div`
     border-radius: 15px;
     text-align: center;
     padding: 3rem 1rem;
-    background-color: aqua;
+background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 0.55) 100%, rgba(237, 221, 83, 1) 100%);
 `
 

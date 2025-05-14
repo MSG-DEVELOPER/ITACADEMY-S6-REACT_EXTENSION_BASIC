@@ -1,56 +1,61 @@
-import { Card } from "./CardService.style";
-import {Card_Seccion1} from './CardService.style';
-import {Card_Seccion2} from './CardService.style';
-import {Card_Seccion3} from './CardService.style';
-import { Card_Seccion1_p1 } from "./CardService.style";
-import { Card_Seccion1_p2 } from "./CardService.style";
 
 
-import { useContext } from "react";
+import {Styles as S}  from './CardService.style' ;
+
+import { useContext, useState, type ReactNode } from "react";
 import { ContextTotalPrice } from "../../ServicesBox/ServicesBox";
 import { ContextSetTotalPrice } from "../../ServicesBox/ServicesBox";
 
 interface CardProps {
   service: string;
   description: string;
-  price:number;
+  price: number;
+  children?: ReactNode;
 }
 
 function CardService(props: CardProps) {
-
   const totalPrice = useContext(ContextTotalPrice);
   const setTotalPrice = useContext(ContextSetTotalPrice);
+  const [renderChildren, setRenderChildren] = useState(false);
 
-  function incrementa(event: React.MouseEvent<HTMLInputElement>,price:number) {
-   
-     const target = event.target as HTMLInputElement;
+  function HandleCheck(
+    event: React.MouseEvent<HTMLInputElement>,
+    price: number
+  ) {
+    const target = event.target as HTMLInputElement;
 
-    if(target.checked && setTotalPrice){
-
-    setTotalPrice(totalPrice + price);
-  
-    } else if (!target.checked && setTotalPrice){
+    if (target.checked && setTotalPrice) {
+      setTotalPrice(totalPrice + price);
+      setRenderChildren(true);
+    } else if (!target.checked && setTotalPrice) {
       setTotalPrice(totalPrice - price);
-       
+      setRenderChildren(false);
     }
-
-   
-
   }
 
   return (
-    <Card>
-      <Card_Seccion1>
-        <Card_Seccion1_p1>{props.service}</Card_Seccion1_p1>
-        <Card_Seccion1_p2> {props.description}</Card_Seccion1_p2>
-      </Card_Seccion1>
-      <Card_Seccion2>{props.price} €</Card_Seccion2>
-      <Card_Seccion3>
-        <label htmlFor="checkAñadir">Afegeix</label>
-        <input type="checkbox" id="checkAñadir" onClick={(event)=>incrementa(event , props.price)} />
-      </Card_Seccion3>
-      
-    </Card>
+    <S.Card>
+      <S.Card_Main>
+        <S.Card_Seccion1>
+          <S.Card_Seccion1_p1>{props.service}</S.Card_Seccion1_p1>
+          <S.Card_Seccion1_p2> {props.description}</S.Card_Seccion1_p2>
+        </S.Card_Seccion1>
+        <S.Card_Seccion2>{props.price} €</S.Card_Seccion2>
+        <S.Card_Seccion3>
+          <div style={{display:"flex",justifyContent:"flex-end"}}>
+            <label htmlFor="checkAñadir">Afegeix</label>
+            <input
+              type="checkbox"
+              id="checkAñadir"
+              onClick={(event) => HandleCheck(event, props.price)}
+            />
+          </div>
+        </S.Card_Seccion3>
+      </S.Card_Main>
+      <S.Card_Seccion_Children>
+        {renderChildren && props.children}
+      </S.Card_Seccion_Children>
+    </S.Card>
   );
 }
 

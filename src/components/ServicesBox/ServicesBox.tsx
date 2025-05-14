@@ -1,7 +1,10 @@
+import CardService from "./CardService/CardService";
+import WebChildren from "./WebChildren/WebChildren";
+
 import { Main } from "./ServicesBox.style";
 import { ShowTotal } from "./ServicesBox.style";
 import { BoxTotalPrice } from "./ServicesBox.style";
-import CardService from "./CardService/CardService";
+
 import { createContext } from "react";
 import { useState } from "react";
 import { Dispatch, SetStateAction } from "react";
@@ -24,13 +27,15 @@ function ServicesBox() {
         <ContextTotalPrice.Provider value={totalPrice}>
           <CardService service="Seo" description={Desc} price={300} />
           <CardService service="Ads" description={Desc} price={400} />
-          <CardService service="Web" description={Desc} price={500} />
+          <CardService service="Web" description={Desc} price={500}>
+            <WebChildren/>
+          </CardService>
         </ContextTotalPrice.Provider>
       </ContextSetTotalPrice.Provider>
       <br />
-       
+
       <BoxTotalPrice>
-         <ShowTotal> PREU PRESSUPOSTAT: {totalPrice} €</ShowTotal>
+        <ShowTotal> PREU PRESSUPOSTAT: {totalPrice} €</ShowTotal>
       </BoxTotalPrice>
     </Main>
   );

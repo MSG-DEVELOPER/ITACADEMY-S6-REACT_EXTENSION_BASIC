@@ -11,7 +11,7 @@ justify-content:center;
 export const TitleBox = styled.div`
     width: 80vw;
     border: solid black 2px;
-    font-size: 5vw;
+    font-size: 4vw;
     font-weight: 900;
     border-radius: 15px;
     text-align: center;

@@ -1,4 +1,11 @@
 import { Card } from "./CardService.style";
+import {Card_Seccion1} from './CardService.style';
+import {Card_Seccion2} from './CardService.style';
+import {Card_Seccion3} from './CardService.style';
+import { Card_Seccion1_p1 } from "./CardService.style";
+import { Card_Seccion1_p2 } from "./CardService.style";
+
+
 import { useContext } from "react";
 import { ContextTotalPrice } from "../../ServicesBox/ServicesBox";
 import { ContextSetTotalPrice } from "../../ServicesBox/ServicesBox";
@@ -14,16 +21,16 @@ function CardService(props: CardProps) {
   const totalPrice = useContext(ContextTotalPrice);
   const setTotalPrice = useContext(ContextSetTotalPrice);
 
-  function incrementa(event: React.MouseEvent<HTMLInputElement>,q:number) {
+  function incrementa(event: React.MouseEvent<HTMLInputElement>,price:number) {
    
      const target = event.target as HTMLInputElement;
 
-    if(target.checked){
+    if(target.checked && setTotalPrice){
 
-    setTotalPrice(totalPrice + q);
+    setTotalPrice(totalPrice + price);
   
-    } else{
-      setTotalPrice(totalPrice - q);
+    } else if (!target.checked && setTotalPrice){
+      setTotalPrice(totalPrice - price);
        
     }
 
@@ -33,15 +40,15 @@ function CardService(props: CardProps) {
 
   return (
     <Card>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <p>{props.service}</p>
-        <p> {props.description}</p>
-      </div>
-      <div>{props.price}</div>
-      <div>
+      <Card_Seccion1>
+        <Card_Seccion1_p1>{props.service}</Card_Seccion1_p1>
+        <Card_Seccion1_p2> {props.description}</Card_Seccion1_p2>
+      </Card_Seccion1>
+      <Card_Seccion2>{props.price} €</Card_Seccion2>
+      <Card_Seccion3>
         <label htmlFor="checkAñadir">Afegeix</label>
         <input type="checkbox" id="checkAñadir" onClick={(event)=>incrementa(event , props.price)} />
-      </div>
+      </Card_Seccion3>
       
     </Card>
   );

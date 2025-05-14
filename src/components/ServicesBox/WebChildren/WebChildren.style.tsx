@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
 export const Main = styled.div`
-border: 2px solid black;
+
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+gap: 0.8rem;
 `

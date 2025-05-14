@@ -50,13 +50,13 @@ const Card_Seccion3 = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  margin-right: 10px;
 `;
 
 const Card_Seccion_Children = styled.div`
   margin-top: 2%;
-  border: 5px dotted pink;
-`;
+`
 
 export const Styles = {
   Card,

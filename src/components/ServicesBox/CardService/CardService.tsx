@@ -42,7 +42,7 @@ function CardService(props: CardProps) {
         </S.Card_Seccion1>
         <S.Card_Seccion2>{props.price} €</S.Card_Seccion2>
         <S.Card_Seccion3>
-          <div>
+          <div style={{display:"flex",justifyContent:"flex-end"}}>
             <label htmlFor="checkAñadir">Afegeix</label>
             <input
               type="checkbox"

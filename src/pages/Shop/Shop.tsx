@@ -5,7 +5,7 @@ import ServicesBox from "../../components/ServicesBox/ServicesBox"
 function Shop() {
   return (
     <div>
-       
+      
          <Header />
          <ServicesBox />
 

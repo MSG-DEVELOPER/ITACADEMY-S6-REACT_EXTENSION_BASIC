@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 
 function Home() {
   return (
     <div>
+        <br /><br /><br /><br /><br />
         Home jejejej
-        <Link to="/Shop"> <button>COMPRA</button>  </Link>
+       
         
 
     </div>

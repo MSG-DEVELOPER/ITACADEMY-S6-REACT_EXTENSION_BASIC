@@ -12,8 +12,8 @@ function App() {
          <Route path="/" element= {<Home/>}/>
          <Route path="/Shop" element={<Shop/>}/>
       </Routes>
-       <Header />
-      <ServicesBox />
+      
+      
 
      
     </>

@@ -1,7 +1,15 @@
+import Header from "../../components/Header/Header"
+import ServicesBox from "../../components/ServicesBox/ServicesBox"
+
 
 function Shop() {
   return (
-    <div>Shop</div>
+    <div>
+       
+         <Header />
+         <ServicesBox />
+
+    </div>
   )
 }
 

@@ -5,6 +5,9 @@ import {Styles as S}  from './CardService.style' ;
 import { useContext, useState, type ReactNode } from "react";
 import { ContextTotalPrice } from "../../ServicesBox/ServicesBox";
 import { ContextSetTotalPrice } from "../../ServicesBox/ServicesBox";
+import { ContextSetTotalItems } from "../../ServicesBox/ServicesBox";
+import { ContextTotalItems } from "../../ServicesBox/ServicesBox";
+
 
 interface CardProps {
   service: string;
@@ -16,6 +19,7 @@ interface CardProps {
 function CardService(props: CardProps) {
   const totalPrice = useContext(ContextTotalPrice);
   const setTotalPrice = useContext(ContextSetTotalPrice);
+  const setTotalItems = useContext(ContextSetTotalItems);
   const [renderChildren, setRenderChildren] = useState(false);
 
   function HandleCheck(
@@ -29,6 +33,7 @@ function CardService(props: CardProps) {
       setRenderChildren(true);
     } else if (!target.checked && setTotalPrice) {
       setTotalPrice(totalPrice - price);
+      setTotalItems(0);
       setRenderChildren(false);
     }
   }

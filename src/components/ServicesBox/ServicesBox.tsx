@@ -21,12 +21,12 @@ function ServicesBox() {
   return (
     <Main>
       <br />
-      <br />
-      <br />
+      
+     
       <ContextSetTotalPrice.Provider value={setTotalPrice}>
         <ContextTotalPrice.Provider value={totalPrice}>
-          <CardService service="Seo" description={Desc} price={300} />
-          <CardService service="Ads" description={Desc} price={400} />
+          <CardService service="Seo" description={Desc} price={300}>bb</CardService >
+          <CardService service="Ads" description={Desc} price={400}/>
           <CardService service="Web" description={Desc} price={500}>
             <WebChildren/>
           </CardService>

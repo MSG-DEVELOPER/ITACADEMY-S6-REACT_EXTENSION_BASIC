@@ -14,28 +14,42 @@ export const ContextSetTotalPrice = createContext<Dispatch<
   SetStateAction<number>
 > | null>(null);
 
+export const ContextTotalItems = createContext<number | null>(0);
+export const ContextSetTotalItems = createContext<Dispatch<
+  SetStateAction<number>
+> | null>(null);
+
 function ServicesBox() {
   const [totalPrice, setTotalPrice] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
   const Desc = "Programació d'una web responsive completa";
 
   return (
     <Main>
       <br />
-      
-     
-      <ContextSetTotalPrice.Provider value={setTotalPrice}>
-        <ContextTotalPrice.Provider value={totalPrice}>
-          <CardService service="Seo" description={Desc} price={300}>bb</CardService >
-          <CardService service="Ads" description={Desc} price={400}/>
-          <CardService service="Web" description={Desc} price={500}>
-            <WebChildren/>
-          </CardService>
-        </ContextTotalPrice.Provider>
-      </ContextSetTotalPrice.Provider>
+
+ <ContextTotalItems.Provider value={totalItems}>
+      <ContextSetTotalItems.Provider value={setTotalItems}>
+        <ContextTotalPrice.Provider
+          value={totalPrice}
+        ></ContextTotalPrice.Provider>
+        <ContextSetTotalPrice.Provider value={setTotalPrice}>
+          <ContextTotalPrice.Provider value={totalPrice}>
+            <CardService service="Seo" description={Desc} price={300}>
+              bb
+            </CardService>
+            <CardService service="Ads" description={Desc} price={400} />
+            <CardService service="Web" description={Desc} price={500}>
+              <WebChildren />
+            </CardService>
+          </ContextTotalPrice.Provider>
+        </ContextSetTotalPrice.Provider>
+      </ContextSetTotalItems.Provider>
+       </ContextTotalItems.Provider>
       <br />
 
       <BoxTotalPrice>
-        <ShowTotal> PREU PRESSUPOSTAT: {totalPrice} €</ShowTotal>
+        <ShowTotal> PREU PRESSUPOSTAT: {totalPrice + totalItems}  €</ShowTotal>
       </BoxTotalPrice>
     </Main>
   );

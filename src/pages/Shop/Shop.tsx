@@ -8,6 +8,7 @@ function Shop() {
       
          <Header />
          <ServicesBox />
+       
 
     </div>
   )

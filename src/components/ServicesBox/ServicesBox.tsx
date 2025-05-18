@@ -1,5 +1,6 @@
 import CardService from "./CardService/CardService";
 import WebChildren from "./WebChildren/WebChildren";
+import Form from "../Form/Form";
 
 import { Main } from "./ServicesBox.style";
 import { ShowTotal } from "./ServicesBox.style";
@@ -28,29 +29,37 @@ function ServicesBox() {
     <Main>
       <br />
 
- <ContextTotalItems.Provider value={totalItems}>
-      <ContextSetTotalItems.Provider value={setTotalItems}>
-        <ContextTotalPrice.Provider
-          value={totalPrice}
-        ></ContextTotalPrice.Provider>
-        <ContextSetTotalPrice.Provider value={setTotalPrice}>
-          <ContextTotalPrice.Provider value={totalPrice}>
-            <CardService service="Seo" description={Desc} price={300}>
-              bb
-            </CardService>
-            <CardService service="Ads" description={Desc} price={400} />
-            <CardService service="Web" description={Desc} price={500}>
-              <WebChildren />
-            </CardService>
-          </ContextTotalPrice.Provider>
-        </ContextSetTotalPrice.Provider>
-      </ContextSetTotalItems.Provider>
-       </ContextTotalItems.Provider>
-      <br />
+      <ContextTotalItems.Provider value={totalItems}>
+        <ContextSetTotalItems.Provider value={setTotalItems}>
+          <ContextTotalPrice.Provider
+            value={totalPrice}
+          ></ContextTotalPrice.Provider>
+          <ContextSetTotalPrice.Provider value={setTotalPrice}>
+            <ContextTotalPrice.Provider value={totalPrice}>
+              <CardService service="Seo" description={Desc} price={300}>
+                bb
+              </CardService>
+              <CardService service="Ads" description={Desc} price={400} />
+              <CardService service="Web" description={Desc} price={500}>
+                <WebChildren />
+              </CardService>
 
-      <BoxTotalPrice>
-        <ShowTotal> PREU PRESSUPOSTAT: {totalPrice + totalItems}  €</ShowTotal>
-      </BoxTotalPrice>
+              <br />
+
+              <BoxTotalPrice>
+                <ShowTotal>
+                  {" "}
+                  PREU PRESSUPOSTAT: {totalPrice + totalItems} €
+                </ShowTotal>
+              </BoxTotalPrice>
+              <br />
+              <br />
+              <br />
+              <Form />
+            </ContextTotalPrice.Provider>
+          </ContextSetTotalPrice.Provider>
+        </ContextSetTotalItems.Provider>
+      </ContextTotalItems.Provider>
     </Main>
   );
 }

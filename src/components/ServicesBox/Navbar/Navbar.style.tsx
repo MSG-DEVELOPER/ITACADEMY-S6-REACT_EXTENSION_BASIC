@@ -12,6 +12,7 @@ align-items: center;
 padding: 1rem;
 position: fixed;
 gap:2rem;
+box-shadow: 5px 5px 5px;
 `
 
 

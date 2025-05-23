@@ -6,9 +6,9 @@ import { Main } from "./ServicesBox.style";
 import { ShowTotal } from "./ServicesBox.style";
 import { BoxTotalPrice } from "./ServicesBox.style";
 
-import { createContext } from "react";
-import { useState } from "react";
-import { Dispatch, SetStateAction } from "react";
+import { createContext } from "react"; //
+import { useState } from "react"; //
+import { Dispatch, SetStateAction } from "react"; //
 
 export const ContextTotalPrice = createContext<number | null>(0);
 export const ContextSetTotalPrice = createContext<Dispatch<

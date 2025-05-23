@@ -2,7 +2,7 @@ import { useContext } from "react";
 import {
   ContextTotalItems,
   ContextTotalPrice,
-} from "../ServicesBox/ServicesBox";
+} from '../../App';
 import {
   CardContainer,
   FormContainer,

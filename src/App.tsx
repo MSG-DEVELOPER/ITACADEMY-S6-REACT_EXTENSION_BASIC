@@ -7,6 +7,18 @@ import Home from "./pages/Home/Home.tsx";
 import Shop from "./pages/Shop/Shop.tsx";
 import Navbar from "./components/Navbar/Navbar.tsx";
 
+interface BudgetItem {
+  nombre: string;
+  email: string;
+  telefono: string;
+  total:number;
+  seleccionados: string[];
+}
+
+
+export const ContextBudgetArray= createContext<BudgetItem[] | null>(null);
+export const ContextSetBudgetArray= createContext<Dispatch<SetStateAction<BudgetItem[]>> | null>(null);
+
 export const ContextTotalPrice = createContext<number | null>(0);
 export const ContextSetTotalPrice = createContext<Dispatch<
   SetStateAction<number>
@@ -20,11 +32,13 @@ export const ContextSetTotalItems = createContext<Dispatch<
 function App() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
+  const[budgetArray,setBudgetArray] =  useState<BudgetItem[]>([]);
 
   return (
     <>
       <Navbar />
-
+       <ContextSetBudgetArray.Provider value={setBudgetArray}>
+       <ContextBudgetArray.Provider value={budgetArray}>
        <ContextTotalItems.Provider value={totalItems}>
        <ContextSetTotalItems.Provider value={setTotalItems}>
        <ContextTotalPrice.Provider value={totalPrice}>
@@ -35,11 +49,13 @@ function App() {
         <Route path="/Shop" element={<Shop />} />
       </Routes>
 
-
+      
       </ContextSetTotalPrice.Provider>
       </ContextTotalPrice.Provider>
       </ContextSetTotalItems.Provider>
       </ContextTotalItems.Provider>
+      </ContextBudgetArray.Provider>
+      </ContextSetBudgetArray.Provider>
 
 
     </>

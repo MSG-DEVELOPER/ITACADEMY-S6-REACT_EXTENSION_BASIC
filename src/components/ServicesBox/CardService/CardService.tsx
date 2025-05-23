@@ -1,13 +1,9 @@
-
-
-import {Styles as S}  from './CardService.style' ;
+import { Styles as S } from "./CardService.style";
 
 import { useContext, useState, type ReactNode } from "react";
-import { ContextTotalPrice } from "../../ServicesBox/ServicesBox";
-import { ContextSetTotalPrice } from "../../ServicesBox/ServicesBox";
-import { ContextSetTotalItems } from "../../ServicesBox/ServicesBox";
-import { ContextTotalItems } from "../../ServicesBox/ServicesBox";
-
+import { ContextTotalPrice } from "../../../App";
+import { ContextSetTotalPrice } from "../../../App";
+import { ContextSetTotalItems } from "../../../App";
 
 interface CardProps {
   service: string;
@@ -31,7 +27,12 @@ function CardService(props: CardProps) {
     if (target.checked && setTotalPrice) {
       setTotalPrice(totalPrice + price);
       setRenderChildren(true);
-    } else if (!target.checked && setTotalPrice) {
+    } else if (
+      !target.checked &&
+      setTotalPrice &&
+      setTotalItems 
+      
+    ) {
       setTotalPrice(totalPrice - price);
       setTotalItems(0);
       setRenderChildren(false);
@@ -47,7 +48,7 @@ function CardService(props: CardProps) {
         </S.Card_Seccion1>
         <S.Card_Seccion2>{props.price} €</S.Card_Seccion2>
         <S.Card_Seccion3>
-          <div style={{display:"flex",justifyContent:"flex-end"}}>
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
             <label htmlFor="checkAñadir">Afegeix</label>
             <input
               type="checkbox"

@@ -10,11 +10,11 @@ height: 95vh;
 `
 
 export const Header =styled.header`
-background-image: url("/banner.jpg");
-height: 200px;
+background-image: url("/banner.png");
+height: 800px;
 background-size: cover;
 background-repeat: no-repeat;
-background-position: center;
+background-position:top;
 `
 
 export const Body = styled.section`

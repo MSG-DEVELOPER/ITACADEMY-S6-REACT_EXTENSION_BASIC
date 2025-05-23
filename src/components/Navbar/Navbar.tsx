@@ -13,10 +13,6 @@ function Navbar() {
         {" "}
         <HomeImage src="/shop.png" alt="icono de una casa" />
       </Link>
-       <Link to="/Budget">
-        {" "}
-        <HomeImage src="/budget.png" alt="icono de una casa" />
-      </Link>
     </NavbarComponent>
   );
 }

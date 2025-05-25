@@ -26,8 +26,6 @@ function Form() {
   const [tlf, setTlf] = useState<string>("");
 
   function addCardBudget() {
-    alert("Añadido a Mis Presupuestos " + (total + totalItems) + name + email + tlf);
-     console.log("Antes de agregar:", budgetArray);
     setBudgetArray([...budgetArray, {
   nombre: name,
   email: email,

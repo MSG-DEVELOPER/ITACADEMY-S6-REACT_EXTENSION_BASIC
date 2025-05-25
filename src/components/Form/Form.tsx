@@ -3,8 +3,10 @@ import {
   ContextTotalItems,
   ContextTotalPrice,
   ContextSetBudgetArray,
-  ContextBudgetArray
+  ContextBudgetArray, 
+  ContextSelectedServices, 
 } from '../../App';
+
 import {
   CardContainer,
   FormContainer,
@@ -17,6 +19,7 @@ function Form() {
   const totalItems = useContext(ContextTotalItems);
   const setBudgetArray = useContext(ContextSetBudgetArray);
   const budgetArray = useContext(ContextBudgetArray);
+  const selectedServices = useContext(ContextSelectedServices);
 
   const [name,setName]=useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -30,7 +33,7 @@ function Form() {
   email: email,
   telefono: tlf,
   total: (total + totalItems),
-  seleccionados: []
+  seleccionados: selectedServices
 }]);
   }
 
@@ -55,7 +58,7 @@ function handleOnChangeTlf(e) {
         <Input type="text" placeholder="Nombre" value={name}  onChange={handleOnChangeName}  />
         <Input type="text" placeholder="Email"value={email} onChange={handleOnChangeEmail}/>
         <Input type="text" placeholder="Teléfono" value={tlf} onChange={handleOnChangeTlf} />
-        <RedButton onClick={addCardBudget}>Sol.licita presupost ✅</RedButton>
+        <RedButton onClick={addCardBudget}>Sol.licita presupost </RedButton>
       </FormContainer>
     </CardContainer>
   );

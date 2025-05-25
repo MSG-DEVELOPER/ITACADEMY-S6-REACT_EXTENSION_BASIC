@@ -4,6 +4,7 @@ import { useContext, useState, type ReactNode } from "react";
 import { ContextTotalPrice } from "../../../App";
 import { ContextSetTotalPrice } from "../../../App";
 import { ContextSetTotalItems } from "../../../App";
+import { ContextSelectedServices, ContextSetSelectedServices } from "../../../App";
 
 interface CardProps {
   service: string;
@@ -16,28 +17,39 @@ function CardService(props: CardProps) {
   const totalPrice = useContext(ContextTotalPrice);
   const setTotalPrice = useContext(ContextSetTotalPrice);
   const setTotalItems = useContext(ContextSetTotalItems);
+  const selectedServices = useContext(ContextSelectedServices);
+  const setSelectedServices = useContext(ContextSetSelectedServices);
+
   const [renderChildren, setRenderChildren] = useState(false);
 
   function HandleCheck(
-    event: React.MouseEvent<HTMLInputElement>,
-    price: number
-  ) {
-    const target = event.target as HTMLInputElement;
+  event: React.MouseEvent<HTMLInputElement>,
+  price: number
+) {
+  const target = event.target as HTMLInputElement;
 
-    if (target.checked && setTotalPrice) {
-      setTotalPrice(totalPrice + price);
-      setRenderChildren(true);
-    } else if (
-      !target.checked &&
-      setTotalPrice &&
-      setTotalItems 
-      
-    ) {
-      setTotalPrice(totalPrice - price);
-      setTotalItems(0);
-      setRenderChildren(false);
+  if (target.checked) {
+    if (setTotalPrice) setTotalPrice(totalPrice + price);
+    if (setSelectedServices && selectedServices) {
+      setSelectedServices([...selectedServices, props.service]);
     }
+    setRenderChildren(true);
+        console.log(selectedServices);
+
+  } else {
+    if (setTotalPrice) setTotalPrice(totalPrice - price);
+    if (setTotalItems) setTotalItems(0);
+    if (setSelectedServices && selectedServices) {
+      const updated = selectedServices.filter(
+        (service) => service !== props.service
+      );
+      setSelectedServices(updated);
+    }
+    setRenderChildren(false);
+    console.log(selectedServices);
   }
+}
+
 
   return (
     <S.Card>

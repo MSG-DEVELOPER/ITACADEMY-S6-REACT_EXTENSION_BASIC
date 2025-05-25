@@ -35,6 +35,6 @@ export const RedButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #d62839;
+    background-color: green;
   }
 `;

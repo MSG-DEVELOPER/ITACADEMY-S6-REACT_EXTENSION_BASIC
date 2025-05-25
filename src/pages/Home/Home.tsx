@@ -1,5 +1,4 @@
 import { Main } from "./Home.style";
-import { Header } from "./Home.style";
 import { Title } from "./Home.style";
 import { Footer } from "./Home.style";
 import { Img } from "./Home.style";
@@ -16,7 +15,7 @@ function Home() {
       <br />
       <br />
 
-      <Header> </Header>
+      
       <Title> - SOLÉ BROTHERS TECNOLOGY - </Title>
 
       <Link

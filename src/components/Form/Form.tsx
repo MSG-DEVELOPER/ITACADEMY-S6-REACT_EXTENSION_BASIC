@@ -24,6 +24,14 @@ function Form() {
 
   function addCardBudget() {
     alert("Añadido a Mis Presupuestos " + (total + totalItems) + name + email + tlf);
+     console.log("Antes de agregar:", budgetArray);
+    setBudgetArray([...budgetArray, {
+  nombre: name,
+  email: email,
+  telefono: tlf,
+  total: (total + totalItems),
+  seleccionados: []
+}]);
   }
 
   function handleOnChangeName(e){
@@ -47,7 +55,7 @@ function handleOnChangeTlf(e) {
         <Input type="text" placeholder="Nombre" value={name}  onChange={handleOnChangeName}  />
         <Input type="text" placeholder="Email"value={email} onChange={handleOnChangeEmail}/>
         <Input type="text" placeholder="Teléfono" value={tlf} onChange={handleOnChangeTlf} />
-        <RedButton onClick={addCardBudget}>Go!</RedButton>
+        <RedButton onClick={addCardBudget}>Sol.licita presupost ✅</RedButton>
       </FormContainer>
     </CardContainer>
   );

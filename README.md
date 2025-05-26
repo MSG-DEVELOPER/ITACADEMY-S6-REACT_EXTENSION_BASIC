@@ -1,54 +1,102 @@
-# React + TypeScript + Vite
+# ITACADEMY-S6-REACT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# 🧮 WEB BUDGET CALCULATOR - REACT APP
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📄 Descripción
 
-## Expanding the ESLint configuration
+Este proyecto es una calculadora interactiva de presupuestos para servicios web. Además, permite generar múltiples presupuestos guardándolos con nombre de cliente y presupuesto.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Aprendizajes
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Fundamentos de React: Renderizado condicional, manejo del estado, props y tipado con ***TypeScript***.
+- Uso de ***React Router*** para navegación entre vistas.
+- ***Context API*** para compartir estado global entre componentes.
+- Componentes reutilizables y estructura modular del proyecto.
+- Estilado profesional con ***styled-components.***
+
+## 💻 Tecnologías Utilizadas
+
+- React
+- Typescript
+- Vite
+- Node.js
+- Styled-components
+- Recat Router DOM
+- Context API
+
+
+
+## 📋 Requisitos
+
+
+> Node.js: Se recomienda la versión 18 o superior.
+
+> Npm:  Para la gestión de dependencias.
+
+> Vite 6.x.Para un entorno de desarrollo rápido y ligero.
+
+> TypeScript 5.x.  Para tipado estático y mayor robustez en el código.
+
+
+
+## 🛠️ Instalación
+
+1. Clona este repositorio
+```
+> https://github.com/MSG-DEVELOPER/ITACADEMY-S6-REACT_EXTENSION_BASIC
+```
+2. Una vez dentro del directorio del proyecto, instala dependencias con
+ ```
+ $ npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+3. Levanta el servidor usando Vite:
 ```
+$ npm run dev
+```
+
+## 🧪 Funcionalidades
+✅ Selección de servicios: SEO, ADS y WEB con precios definidos.
+
+✅ Cálculo automático del presupuesto según las opciones seleccionadas.
+
+✅ Personalización del servicio de página web: número de páginas e idiomas.
+
+✅ Botones para incrementar/disminuir páginas e idiomas.
+
+✅ Formulario para guardar presupuestos con nombre y cliente.
+
+✅ Listado de presupuestos generados.
+
+✅ Pantalla de bienvenida con navegación a la calculadora.
+
+✅ Navegación bidireccional entre pantallas con React Router.
+
+
+
+
+
+
+
+
+
+## 🤝 Contribuciones
+¡Las contribuciones son bienvenidas! Para proponer mejoras:
+
+Haz un fork del repositorio.
+
+Crea una nueva rama con tu mejora:
+git checkout -b feature/nueva-funcionalidad
+
+Realiza los cambios y súbelos:
+git commit -m "Añadida nueva funcionalidad"
+git push origin feature/nueva-funcionalidad
+
+Abre un Pull Request en GitHub.
+
+ ¡Gracias por visitar este proyecto!
+
+
+
+

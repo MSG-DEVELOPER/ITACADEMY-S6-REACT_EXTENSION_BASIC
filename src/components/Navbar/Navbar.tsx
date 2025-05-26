@@ -11,7 +11,7 @@ function Navbar() {
       </Link>
       <Link to="/Shop">
         {" "}
-        <HomeImage src="/public/shop.png" alt="icono de una casa" />
+        <HomeImage src="/shop.png" alt="icono de una casa" />
       </Link>
     </NavbarComponent>
   );

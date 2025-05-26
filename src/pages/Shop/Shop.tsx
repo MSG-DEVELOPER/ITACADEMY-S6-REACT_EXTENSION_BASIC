@@ -1,5 +1,6 @@
 import Header from "../../components/Header/Header"
 import ServicesBox from "../../components/ServicesBox/ServicesBox"
+import RenderZone from "../../components/RenderZone/RenderZone"
 
 
 function Shop() {
@@ -8,6 +9,7 @@ function Shop() {
       
          <Header />
          <ServicesBox />
+         <RenderZone/>
 
     </div>
   )

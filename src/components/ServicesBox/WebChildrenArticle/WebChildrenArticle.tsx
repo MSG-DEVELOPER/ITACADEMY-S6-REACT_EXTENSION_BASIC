@@ -4,8 +4,8 @@ import { Panel } from "./WebChildrenArticle.style";
 import { Display } from "./WebChildrenArticle.style";
 
 import { useContext, useState } from "react";
-import { ContextSetTotalItems } from "../ServicesBox";
-import { ContextTotalItems } from "../ServicesBox";
+import { ContextSetTotalItems } from '../../../App';
+import { ContextTotalItems } from '../../../App';
 
 interface props {
   item: string;

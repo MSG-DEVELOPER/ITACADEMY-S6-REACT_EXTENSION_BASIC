@@ -4,8 +4,8 @@ import { Panel } from "./WebChildrenArticle.style";
 import { Display } from "./WebChildrenArticle.style";
 
 import { useContext, useState } from "react";
-import { ContextSetTotalPrice } from "../ServicesBox";
-import { ContextTotalPrice } from "../ServicesBox";
+import { ContextSetTotalItems } from '../../../App';
+import { ContextTotalItems } from '../../../App';
 
 interface props {
   item: string;
@@ -13,8 +13,8 @@ interface props {
 }
 
 function WebChildrenArticle(props: props) {
-  const total = useContext(ContextTotalPrice);
-  const setTotal = useContext(ContextSetTotalPrice);
+  const total = useContext(ContextTotalItems);
+  const setTotal = useContext(ContextSetTotalItems);
   const [items, setItems] = useState(0);
 
   function add() {

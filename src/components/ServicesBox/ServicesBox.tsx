@@ -1,42 +1,45 @@
 import CardService from "./CardService/CardService";
 import WebChildren from "./WebChildren/WebChildren";
+import Form from "../Form/Form";
 
 import { Main } from "./ServicesBox.style";
 import { ShowTotal } from "./ServicesBox.style";
 import { BoxTotalPrice } from "./ServicesBox.style";
 
-import { createContext } from "react";
-import { useState } from "react";
-import { Dispatch, SetStateAction } from "react";
+import { useContext } from "react";
+import { ContextTotalItems, ContextTotalPrice,ContextBudgetArray } from '../../App';
 
-export const ContextTotalPrice = createContext<number | null>(0);
-export const ContextSetTotalPrice = createContext<Dispatch<
-  SetStateAction<number>
-> | null>(null);
+
 
 function ServicesBox() {
-  const [totalPrice, setTotalPrice] = useState(0);
+
+  const totalPrice=useContext(ContextTotalPrice);
+  const totalItems=useContext(ContextTotalItems);
+ 
+
   const Desc = "Programació d'una web responsive completa";
 
   return (
     <Main>
       <br />
-      <br />
-      <br />
-      <ContextSetTotalPrice.Provider value={setTotalPrice}>
-        <ContextTotalPrice.Provider value={totalPrice}>
-          <CardService service="Seo" description={Desc} price={300} />
-          <CardService service="Ads" description={Desc} price={400} />
-          <CardService service="Web" description={Desc} price={500}>
-            <WebChildren/>
-          </CardService>
-        </ContextTotalPrice.Provider>
-      </ContextSetTotalPrice.Provider>
+
+      <CardService service="Seo" description={Desc} price={300}/>
+      <CardService service="Ads" description={Desc} price={400} />
+      <CardService service="Web" description={Desc} price={500}>
+        <WebChildren />
+      </CardService>
+
       <br />
 
       <BoxTotalPrice>
-        <ShowTotal> PREU PRESSUPOSTAT: {totalPrice} €</ShowTotal>
+        <ShowTotal> PREU PRESSUPOSTAT: {totalPrice + totalItems} €</ShowTotal>
       </BoxTotalPrice>
+      <br />
+      <br />
+      <br />
+      <Form />
+      <br /><br /><br />
+
     </Main>
   );
 }

@@ -1,7 +1,8 @@
+/* eslint-disable react-refresh/only-export-components */
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { createContext } from "react";
-import { Dispatch, SetStateAction } from "react";
+import type  { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
 import Home from "./pages/Home/Home.tsx";
 import Shop from "./pages/Shop/Shop.tsx";

@@ -7,15 +7,12 @@ import { ShowTotal } from "./ServicesBox.style";
 import { BoxTotalPrice } from "./ServicesBox.style";
 
 import { useContext } from "react";
-import { ContextTotalItems, ContextTotalPrice,ContextBudgetArray } from '../../App';
-
-
+import { ContextTotalItems, ContextTotalPrice } from '../../App';
 
 function ServicesBox() {
 
-  const totalPrice=useContext(ContextTotalPrice);
-  const totalItems=useContext(ContextTotalItems);
- 
+  const totalPrice = useContext(ContextTotalPrice) ?? 0;
+  const totalItems = useContext(ContextTotalItems) ?? 0;
 
   const Desc = "Programació d'una web responsive completa";
 

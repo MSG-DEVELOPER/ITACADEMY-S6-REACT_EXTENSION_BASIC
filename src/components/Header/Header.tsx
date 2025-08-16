@@ -1,14 +1,18 @@
-import { Main } from "./Header.style";
-import { TitleBox } from "./Header.style";
+import { Home } from "lucide-react";
+import { HeaderBar, Bg, Overlay, Content, Title, HomeLink } from "./Header.style";
 
-function Header() {
+export default function Header() {
   return (
-    <>
-      <Main>
-        <TitleBox>Aconsegueix la millor qualitat</TitleBox>
-      </Main>
-    </>
+    <HeaderBar role="banner" aria-label="Header principal">
+      <Bg />
+      <Overlay />
+      <Content>
+        <HomeLink to="/" aria-label="Volver al inicio" title="Inicio">
+          <Home />
+        </HomeLink>
+
+        <Title>EL MERCADO MAS GRANDE DEL MUNDO</Title>
+      </Content>
+    </HeaderBar>
   );
 }
-
-export default Header;

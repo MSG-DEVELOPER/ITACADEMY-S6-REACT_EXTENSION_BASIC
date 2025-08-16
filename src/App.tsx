@@ -6,7 +6,6 @@ import type  { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
 import Home from "./pages/Home/Home.tsx";
 import Shop from "./pages/Shop/Shop.tsx";
-import Navbar from "./components/Navbar/Navbar.tsx";
 
 interface BudgetItem {
   nombre: string;
@@ -42,7 +41,6 @@ function App() {
 
   return (
     <>
-      <Navbar />
        <ContextSetBudgetArray.Provider value={setBudgetArray}>
        <ContextBudgetArray.Provider value={budgetArray}>
        <ContextTotalItems.Provider value={totalItems}>

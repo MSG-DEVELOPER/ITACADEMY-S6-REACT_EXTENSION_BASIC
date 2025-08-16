@@ -8,7 +8,8 @@ function Shop() {
     <div>
       
          <Header />
-         <ServicesBox />
+         <div style={{marginTop:"10rem"}}> <ServicesBox  /></div>
+        
          <RenderZone/>
 
     </div>

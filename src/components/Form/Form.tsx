@@ -53,7 +53,7 @@ function Form() {
 
   return (
     <CardContainer>
-      <h1>Demanar pressupost</h1>
+      <h1>Crear Presupuesto</h1>
       <FormContainer>
         <Input
           type="text"
@@ -73,7 +73,7 @@ function Form() {
           value={tlf}
           onChange={handleOnChangeTlf}
         />
-        <RedButton onClick={addCardBudget}>Sol.licita presupost</RedButton>
+        <RedButton onClick={addCardBudget}>Solicitar presupuesto</RedButton>
       </FormContainer>
     </CardContainer>
   );
